@@ -1,0 +1,40 @@
+.post{
+    max-width: 500px;
+    background-color: #FFFFFF;
+    border: 1px solid lightgray;
+    margin: 20px auto;
+}
+
+.post__image{
+    width: 100%;
+    object-fit: contain;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.post__avatar{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.post__avatar__name{
+    margin: 0 0 0 10px;
+    font-size: 14px;
+}
+
+.post__caption{
+    display: flex;
+    padding: 20px;
+}
+.post__caption__name{
+    width: fit-content;
+    margin: 0 10px 0 0;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.post__caption__caption{
+    font-size: 14px;
+}
