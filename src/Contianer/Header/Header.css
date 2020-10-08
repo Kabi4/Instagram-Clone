@@ -5,6 +5,9 @@
     display: flex;
     border-bottom: 1px solid lightgray;
     z-index: 1000;
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .header__logo{

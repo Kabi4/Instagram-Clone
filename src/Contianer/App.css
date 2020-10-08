@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.userInfo{
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  width: fit-content;
+}
+
+.userInfo > *{
+  color: #ccc;
+  margin-right: 10px;
+}

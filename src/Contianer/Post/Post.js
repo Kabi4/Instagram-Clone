@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Post.css';
-import post from './../../Assets/Images/Post.jpg';
 import Avatar from '@material-ui/core/Avatar/Avatar'; 
 class Post extends Component {
     render() {
@@ -9,15 +8,15 @@ class Post extends Component {
                 <div className="post__avatar">
                     <Avatar 
                         src=""
-                        alt="KushagraSingh"
-                        children="K"
+                        alt={this.props.username}
+                        children={this.props.username[0]}
                     />
-                    <p className="post__avatar__name">KushagraSingh</p>
+                    <p className="post__avatar__name">{this.props.username}</p>
                 </div>
-                <img className="post__image" src={post} alt="post" />
+                <img className="post__image" src={this.props.imgurl} alt="post" />
                 <div className="post__caption">
-                    <p className="post__caption__name">KushagraSingh</p>
-                    <p className="post__caption__caption">The Nature is only thing which is pure.....</p>
+                    <p className="post__caption__name">{this.props.username}</p>
+                    <p className="post__caption__caption">{this.props.caption}</p>
                 </div>
             </div>
         )

@@ -1,0 +1,65 @@
+.Input{
+    position: relative;
+    margin: 20px 0;
+    max-width: fit-content;
+}
+
+.Label{
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    position: absolute;
+    font-style: italic;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.1s ease-out;
+}
+
+.filled{
+    color: grey;
+    font-weight: 500;
+    position: absolute;
+    top: 0%;
+    left: 10px;
+    transform: translateY(-100%);
+    transition: all 0.1s ease-out;
+}
+
+.Inputelement{
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-bottom: 2px #ccc solid;
+    outline: none;
+    padding: 20px 10px 20px 10px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s linear;
+    border-radius: 4px;
+}
+
+.Inputelement:hover{
+    background-color: #eee;
+}
+
+.Inputelement:focus{
+    padding: 10px;
+    background-color: #eee;
+}
+
+.Invalid{
+    background-color: rgba(228, 110, 110, 0.253);
+    border-bottom: 2px red solid;
+    padding: 10px!important;
+}
+
+.Valid{
+    background-color:  rgb(115, 255, 0,0.2);
+    padding: 10px!important;
+    border-bottom: 2px lightgreen solid;
+}
+
+.Inputelement:focus + label{
+    top: 0%;
+    left: 10px;
+    transform: translateY(-100%);
+}
