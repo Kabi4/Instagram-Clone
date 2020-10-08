@@ -10,3 +10,24 @@
 .uploader > *{
     margin: 10px;
 }
+
+.uploader__caption{
+    font-size: 14px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: white;
+    border-bottom: 2px solid #ccc;
+    transition: all 0.2s linear;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.uploader__caption:hover{
+    background-color: #ccc;
+}
+
+.uploader__caption:focus{
+    background-color: #ccc;
+    border-bottom: 2px solid gray;
+}

@@ -121,7 +121,7 @@ class Login extends Component {
                         })}
                             <Button disabled={allInputElements.some((ele,i,arr)=>{
                                 return ele.config.isValid!==true;
-                            })} onClick={(e)=>{this.auth(e)}} >{this.state.isSignUp?"Sign Up":"Log In"}</Button>
+                            })} type="submit" >{this.state.isSignUp?"Sign Up":"Log In"}</Button>
                         </form>
 
                         <h4 className="h4">{this.state.isSignUp?"Already have an account?":"New To Instagram Sign up?"}</h4>

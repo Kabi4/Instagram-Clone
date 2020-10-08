@@ -1,0 +1,16 @@
+.comment{
+    display: flex;
+    align-items: baseline;
+}
+
+.comment__user{
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.comment__detials{
+    font-size: 12px;
+    color: rgb(75, 72, 72);
+    padding-right: 10px;
+}

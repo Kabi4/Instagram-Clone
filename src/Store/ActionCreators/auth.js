@@ -47,10 +47,10 @@ export const authenticate = (email,password,isSignup,name)=>{
         if(isSignup){
             auth.createUserWithEmailAndPassword(email,password)
             .then(authUser=>{
-                authUser.user.updateProfile({
-                    displayName: this.props.displayName
-                })
                 dispatch(AUTH__SUCCESS(name));
+                authUser.user.updateProfile({
+                    displayName: name                
+                })
             })
             .catch(err=>{
                 if(err.message){dispatch(AUTH__FAILED(err.message));}else{

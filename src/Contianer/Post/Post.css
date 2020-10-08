@@ -26,7 +26,7 @@
 
 .post__caption{
     display: flex;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
 }
 .post__caption__name{
     width: fit-content;
@@ -37,4 +37,41 @@
 
 .post__caption__caption{
     font-size: 14px;
+}
+
+.post__form{
+    display: flex;
+    position: relative;
+    padding: 5px 20px 5px 20px;
+    z-index: 1;
+    align-items: center;
+}
+
+.post__input{
+    font-family: inherit;
+    flex: 1;
+    height: 18px;
+    padding: 10px;
+    z-index: 1;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    border-bottom: 2px lightgray solid;
+}
+
+.post__input:hover{
+    background-color: #ccc;
+}
+
+.post__input:focus{
+    background-color: #ccc;
+    border-bottom: 2px solid gray;
+}
+.post__button{
+    flex: 0;
+    margin: 0 5px!important;
+}
+
+.post__comments{
+    padding: 0 20px 10px 20px;
 }

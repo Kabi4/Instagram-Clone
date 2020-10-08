@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import InstagramEmbed from 'react-instagram-embed';
 import './App.css';
 import Header from './Header/Header';
 import Post from './Post/Post';
@@ -36,11 +37,14 @@ class App extends PureComponent {
 
   componentDidUpdate(){
     auth.onAuthStateChanged(authUser=>{
-      if(authUser){
+      if(authUser && authUser.displayName){
           this.setState({user: authUser,modal: false});
           this.props.loggedIn(authUser.displayName);
+      }else if(authUser){
+        this.setState({user: authUser,modal: false});
       }else{
         this.setState({user: null});
+        this.props.loggedOut();
       }
     })
   }
@@ -61,9 +65,6 @@ class App extends PureComponent {
               <Login/>
             </SimpleModal>
             <Header/>
-            {this.props.authenticated?<div><ImageUploader username={this.props.displayName}/></div>:<div>
-                <h2>Sign in to share your moments!</h2>
-              </div>}
             <div className="userInfo">
             {!this.props.authenticated?<p>Hey, You are not logged in</p>:
               <React.Fragment>
@@ -76,7 +77,40 @@ class App extends PureComponent {
             }
             {this.props.authenticated?<Button onClick={()=>{this.props.loggedOut()}} >Sign Out</Button>:<Button onClick={this.handleOpen} >Sign-In</Button>}
             </div>
-            {this.state.posts.map(ele=><Post key={ele.id} username={ele.data.username} imgurl={ele.data.imgurl} caption={ele.data.caption} />)}
+            {this.props.authenticated?<div><ImageUploader username={this.props.displayName}/></div>:<div>
+                <h2>Sign in to share your moments!</h2>
+              </div>}
+            <div className="posts">
+              <div className="posts__left">
+              {this.state.posts.map(ele=><Post displayName={this.props.displayName} postid={ele.id} key={ele.id} username={ele.data.username} imgurl={ele.data.imgurl} caption={ele.data.caption} />)}
+              </div>
+              <div className="posts__right">
+                <InstagramEmbed
+                    url='https://www.instagram.com/p/CE2D73fg6lB/'
+                    maxWidth={320}
+                    hideCaption={false}
+                    containerTagName='div'
+                    injectScript
+                    protocol=''
+                    onLoading={() => {}}
+                    onSuccess={() => {}}
+                    onAfterRender={() => {}}
+                    onFailure={() => {}}
+                />
+                <InstagramEmbed
+                    url='https://www.instagram.com/p/CFE7Nh9iSmV/'
+                    maxWidth={320}
+                    hideCaption={false}
+                    containerTagName='div'
+                    injectScript
+                    protocol=''
+                    onLoading={() => {}}
+                    onSuccess={() => {}}
+                    onAfterRender={() => {}}
+                    onFailure={() => {}}
+                />
+              </div>
+            </div>
           </React.Fragment>
         }
       </div>

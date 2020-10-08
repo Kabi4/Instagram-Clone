@@ -63,10 +63,10 @@ class ImageUploader extends Component {
         return (
             <div className="uploader">
                 <h4>{this.props.username}, Share Your Moments</h4>
-                <progress style={{width: "100%",padding: "0px 0px"}} max={100} value={this.state.progressing} />
-                <input type="text" placeholder="What's on your mind?" value={this.state.caption}  onChange={(e)=>{e.preventDefault();this.setState({caption: e.target.value})}} />
+                <progress style={{width: "95%",padding: "0px 0px"}} max={100} value={this.state.progressing} />
+                <input className="uploader__caption" type="text" placeholder="What's on your mind?" value={this.state.caption}  onChange={(e)=>{e.preventDefault();this.setState({caption: e.target.value})}} />
                 <input type="file" onChange={(e)=>{this.imageSourceChangeHandler(e)}} />
-                <Button disabled={this.state.posting} onClick={(e)=>{this.uploadHandler(e)}}>{this.state.posting?"Uploading...":"Upload"}</Button>
+                <Button disabled={this.state.posting||this.state.caption.trim()===""||this.state.image===null} onClick={(e)=>{this.uploadHandler(e)}}>{this.state.posting?"Uploading...":"Upload"}</Button>
             </div>
         )
     }

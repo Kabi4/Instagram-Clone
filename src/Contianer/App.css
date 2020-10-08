@@ -30,11 +30,27 @@
 .userInfo{
   display: flex;
   align-items: center;
-  margin: 10px auto;
   width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .userInfo > *{
   color: #ccc;
   margin-right: 10px;
+}
+
+.posts{
+  margin: 10px auto;
+  display: flex;
+  width: fit-content;
+}
+
+.posts__right{
+  padding: 20px;
+  padding-bottom: 0px!important;
+}
+
+.posts__right > *{
+  margin-bottom: 20px;
 }
