@@ -1,5 +1,5 @@
 # APP LIVE    
-  [Instragram Clone here](https://instagram-clone-1dc93.web.app/)
+  [Instragram Clone here](https://instagram-clone-1dc93.web.app/)  
 # Build Details  
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
